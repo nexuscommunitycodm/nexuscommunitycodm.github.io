@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Community — Call of Duty Mobile</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nexus Community — Call of Duty Mobile" />
+    <meta property="og:description" content="Comunidad competitiva de Call of Duty Mobile. Clanes, salas, torneos y ranking." />
+    <meta property="og:image" content="logo/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nexus Community" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nexus Community — CoD Mobile" />
+    <meta name="twitter:description" content="Únete a la comunidad. Clanes, salas y torneos." />
+
+    <!-- SEO -->
+    <meta name="description" content="Nexus Community — Comunidad competitiva de Call of Duty Mobile. Clanes, salas de juego, torneos y ranking." />
+    <meta name="keywords" content="Call of Duty Mobile, comunidad, clanes, salas, torneos, ranking, Nexus" />
+    <meta name="author" content="Nexus Community" />
+
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navbar se inyecta desde js/navbar.js -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-inner">
+                <img src="logo/logo.png" alt="Nexus Community" class="hero-logo" onerror="this.style.display='none'">
+                <p class="hero-desc">Comunidad competitiva de Call of Duty Mobile. Clanes, salas y torneos donde solo los mejores demuestran su valía.</p>
+                <div class="hero-actions">
+                    <a href="https://forms.gle/PLACEHOLDER" target="_blank" rel="noopener" class="btn btn-primary">Registrar Clan</a>
+                    <a href="clanes.html" class="btn btn-secondary">Explorar Clanes</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Estadísticas</h2>
+                <p class="section-subtitle">Números de la comunidad</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number" id="statClanes">—</div>
+                        <div class="stat-label">Clanes Registrados</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚔️</div>
+                        <div class="stat-number" id="statJugadores">—</div>
+                        <div class="stat-label">Jugadores Activos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎮</div>
+                        <div class="stat-number" id="statSalas">—</div>
+                        <div class="stat-label">Salas Activas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGLAS -->
+        <section class="section" style="background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+            <div class="container">
+                <h2 class="section-title">Reglas de la Comunidad</h2>
+                <p class="section-subtitle">Normas que mantienen Nexus como una comunidad competitiva y respetable</p>
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="rule-num">1</div>
+                        <h3>Respeto Mutuo</h3>
+                        <ul>
+                            <li>Prohibido lenguaje ofensivo, amenazas, acoso o discriminación.</li>
+                            <li>Los conflictos se resuelven por los canales oficiales de forma pacífica.</li>
+                        </ul>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">2</div>
+                        <h3>Liderazgo Responsable</h3>
+                        <ul>
+                            <li>Cada líder responde por el comportamiento de su clan.</li>
+                            <li>Se espera fomento del respeto, participación y juego limpio.</li>
+                        </ul>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">3</div>
+                        <h3>Juego Limpio</h3>
+                        <ul>
+                            <li>Prohibido hacks, glitches, trampas o prácticas antideportivas.</li>
+                            <li>La violación implica expulsión inmediata o baneo.</li>
+                        </ul>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">4</div>
+                        <h3>Compromiso</h3>
+                        <ul>
+                            <li>Cumplir horarios y reglas de las salas.</li>
+                            <li>Escuadras completas, con tag y dentro del clan de juego.</li>
+                            <li>Respetar slots. Si te anotas, entras.</li>
+                        </ul>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">5</div>
+                        <h3>Administración</h3>
+                        <ul>
+                            <li>Staff y moderadores son voluntarios.</li>
+                            <li>Sanciones desde advertencias hasta expulsión permanente.</li>
+                        </ul>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-num">6</div>
+                        <h3>Comunicación</h3>
+                        <ul>
+                            <li>Sin spam ni contenido no relacionado en los grupos oficiales.</li>
+                            <li>No promocionar otros grupos sin autorización.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLANES DESTACADOS -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Clanes Destacados</h2>
+                <p class="section-subtitle" id="contadorClanes">Los clanes con más trofeos de la comunidad</p>
+                <div class="clanes-grid" id="clanesDestacados">
+                    <div class="mensaje-cargando">Cargando clanes...</div>
+                </div>
+                <div class="actions-row">
+                    <a href="clanes.html" class="btn btn-secondary">Ver todos los clanes</a>
+                    <a href="ranking.html" class="btn btn-primary">Ver ranking</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-block">
+            <h2>¿Listo para competir?</h2>
+            <p>Únete a Nexus y demuestra tu nivel en las salas y torneos</p>
+            <div class="hero-actions">
+                <a href="https://forms.gle/PLACEHOLDER" target="_blank" rel="noopener" class="btn btn-primary">Registrar Clan</a>
+                <a href="ranking.html" class="btn btn-secondary">Ver Ranking</a>
+            </div>
+        </section>
+
+        <!-- REDES -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Síguenos</h2>
+                <p class="section-subtitle">Torneos, eventos y contenido de la comunidad</p>
+                <div class="social-grid">
+                    <a href="#" target="_blank" rel="noopener" class="social-card">
+                        <div class="social-icon">🎵</div>
+                        <div class="social-name">TikTok</div>
+                        <div class="social-handle">@nexus</div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="social-card">
+                        <div class="social-icon">📸</div>
+                        <div class="social-name">Instagram</div>
+                        <div class="social-handle">@nexus</div>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="social-card">
+                        <div class="social-icon">💬</div>
+                        <div class="social-name">WhatsApp</div>
+                        <div class="social-handle">Grupo oficial</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="nx-footer">
+        <div class="nx-footer-inner">
+            <div>
+                <h3>Nexus Community</h3>
+                <p>Comunidad competitiva de Call of Duty Mobile</p>
+            </div>
+            <div>
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="clanes.html">Clanes</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="salas.html">Salas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Redes</h3>
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nx-footer-bottom">
+            <p>© 2026 Nexus Community — Call of Duty Mobile</p>
+        </div>
+    </footer>
+
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limited Room — Nexus Community</title>
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main>
+        <section class="page-hero sala-hero" style="--room-color:#183A15">
+            <div class="container">
+                <img src="logos/LIMITED.jpeg" alt="Limited Room" class="sala-hero-logo"
+                     onerror="this.style.display='none'">
+                <h1 class="section-title" style="color:#183A15">Limited Room</h1>
+                <p class="section-subtitle">Host: Gayla · 8:00 pm mx</p>
+                <a href="salas.html" class="btn btn-secondary">← Volver a Salas</a>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container rules-wrap">
+                <h2 class="rules-title">Reglas</h2>
+
+                <div class="rules-grid-2">
+                    <div class="rules-card" style="--room-color:#183A15">
+                        <h3>Generales prohibidas</h3>
+                        <ul class="rules-ban">
+                            <li>Bugs, VPN, Hacks, PC, controles externos</li>
+                            <li>Toxicidad en chat de sala</li>
+                            <li>Toxicidad en juego (micro en "todo")</li>
+                            <li>Emotes</li>
+                            <li>Atropellar o buggear con vehículo</li>
+                            <li>No rematar (no concretar la kill por +20 seg.)</li>
+                            <li>Team entre squads</li>
+                        </ul>
+                    </div>
+                    <div class="rules-card" style="--room-color:#183A15">
+                        <h3>Habilidades prohibidas</h3>
+                        <ul class="rules-ban">
+                            <li>Expoliador (torreta)</li>
+                            <li>Detonador</li>
+                            <li>Trampas</li>
+                            <li>Localizador (racimo)</li>
+                            <li>Desesperado</li>
+                            <li>Payasos (perros)</li>
+                            <li>Sobrecarga tóxica</li>
+                            <li>Dardo eléctrico</li>
+                        </ul>
+                    </div>
+                    <div class="rules-card" style="--room-color:#183A15">
+                        <h3>Armas prohibidas</h3>
+                        <ul class="rules-ban">
+                            <li>SMRS, FHJ-18, Thumper (contra jugadores)</li>
+                            <li>Munición especial (Aniquiladora, Tempestad, Purificador, Máquina de Guerra)</li>
+                            <li>Cargadores / accesorios especiales (mira térmica, cargador explosivo, termita, Omega)</li>
+                            <li>MG42 con mira de francotirador</li>
+                            <li>Escopetas automáticas / semiautomáticas (Jack-12, Striker, Echo, HS2126, R9-0, VLK Rogue, Einhorn, MX Guardian)</li>
+                        </ul>
+                    </div>
+                    <div class="rules-card" style="--room-color:#183A15">
+                        <h3>Vehículos baneados</h3>
+                        <ul class="rules-ban">
+                            <li>Jackal</li>
+                            <li>Aeromoto</li>
+                            <li>Tanques</li>
+                            <li>Antílope</li>
+                            <li>Helicóptero de Sigilo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rules-card rules-puntos" style="--room-color:#183A15">
+                    <h3>Sistema de puntos</h3>
+                    <div class="puntos-chips">
+                        <span>1er · 25 pts</span>
+                        <span>2do · 20 pts</span>
+                        <span>3er · 18 pts</span>
+                        <span>4to · 16 pts</span>
+                        <span>5to · 14 pts</span>
+                        <span>6–10 · 10 pts</span>
+                        <span>11–15 · 8 pts</span>
+                        <span>16–20 · 6 pts</span>
+                        <span>21–23 · 2 pts</span>
+                        <span>Cada kill · 1 pt</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+        <section class="section">
+            <div class="container">
+                <h2 class="rules-title">Ranking de la sala</h2>
+                <p class="section-subtitle" style="margin-bottom:1.25rem">Solo puntos de esta room · semana actual</p>
+                <div class="ranking-list" id="salaRanking" data-sala="limited"></div>
+            </div>
+        </section>
+
+    <footer class="nx-footer">
+        <div class="nx-footer-bottom"><p>© 2026 Nexus Community</p></div>
+    </footer>
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/sala-ranking.js"></script>
+
+</body>
+</html>

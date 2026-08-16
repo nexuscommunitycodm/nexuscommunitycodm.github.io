@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración — Nexus Community</title>
+
+    <meta property="og:title" content="Configuración — Nexus Community" />
+    <meta property="og:description" content="Personaliza tema y preferencias de Nexus Community" />
+    <meta property="og:image" content="logo/logo.png" />
+    <meta property="og:type" content="website" />
+
+    <meta name="description" content="Configuración de Nexus Community" />
+    <meta name="author" content="Nexus Community" />
+
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="section-title">Configuración</h1>
+                <p class="section-subtitle">Personaliza tu experiencia en Nexus</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container settings-layout">
+
+                <aside class="settings-menu">
+                    <h3>Opciones</h3>
+                    <ul class="settings-menu-list">
+                        <li><a href="#tema" class="menu-item active">Tema</a></li>
+                        <li><a href="#idioma" class="menu-item">Idioma</a></li>
+                        <li><a href="#notificaciones" class="menu-item">Notificaciones</a></li>
+                        <li><a href="#sonido" class="menu-item">Sonido</a></li>
+                        <li><a href="#datos" class="menu-item">Datos y privacidad</a></li>
+                    </ul>
+                </aside>
+
+                <div class="settings-content">
+
+                    <!-- TEMA -->
+                    <div class="settings-panel" id="tema">
+                        <h2>Tema</h2>
+                        <p class="panel-description">Elige el estilo visual de la página (según los logos de Nexus)</p>
+
+                        <div class="theme-grid">
+                            <button type="button" class="theme-card active" data-theme="mono" id="themeMono">
+                                <div class="theme-preview theme-preview-mono"></div>
+                                <span>Negro</span>
+                                <small>Logo blanco</small>
+                            </button>
+                            <button type="button" class="theme-card" data-theme="light" id="themeLight">
+                                <div class="theme-preview theme-preview-light"></div>
+                                <span>Blanco</span>
+                                <small>Logo negro</small>
+                            </button>
+                            <button type="button" class="theme-card" data-theme="azure" id="themeAzure">
+                                <div class="theme-preview theme-preview-azure"></div>
+                                <span>Azul</span>
+                                <small>Logo azul y dorado</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- IDIOMA -->
+                    <div class="settings-panel" id="idioma" hidden>
+                        <h2>Idioma</h2>
+                        <p class="panel-description">Idioma de la interfaz (se guarda en tu navegador)</p>
+                        <label class="settings-label" for="languageSelect">Idioma</label>
+                        <select id="languageSelect" class="settings-select">
+                            <option value="es" selected>Español (ES)</option>
+                            <option value="en">English (EN)</option>
+                            <option value="pt">Português (PT)</option>
+                        </select>
+                    </div>
+
+                    <!-- NOTIFICACIONES -->
+                    <div class="settings-panel" id="notificaciones" hidden>
+                        <h2>Notificaciones</h2>
+                        <p class="panel-description">Preferencias locales (no envían datos al servidor)</p>
+
+                        <label class="settings-option">
+                            <span>Torneos y eventos</span>
+                            <input type="checkbox" id="notifTorneos" checked>
+                        </label>
+                        <label class="settings-option">
+                            <span>Actualizaciones de clanes</span>
+                            <input type="checkbox" id="notifClanes" checked>
+                        </label>
+                        <label class="settings-option">
+                            <span>Mensajes promocionales</span>
+                            <input type="checkbox" id="notifMarketing">
+                        </label>
+                    </div>
+
+                    <!-- SONIDO -->
+                    <div class="settings-panel" id="sonido" hidden>
+                        <h2>Sonido</h2>
+                        <p class="panel-description">Sonidos de la interfaz</p>
+
+                        <label class="settings-option">
+                            <span>Sonidos de interfaz</span>
+                            <input type="checkbox" id="soundToggle" checked>
+                        </label>
+
+                        <label class="settings-label" for="volumeControl">Volumen</label>
+                        <input type="range" id="volumeControl" min="0" max="100" value="50">
+                        <p class="option-description"><span id="volumeValue">50</span>%</p>
+                    </div>
+
+                    <!-- DATOS -->
+                    <div class="settings-panel" id="datos" hidden>
+                        <h2>Datos y privacidad</h2>
+                        <p class="panel-description">Todo se guarda solo en tu navegador (localStorage)</p>
+
+                        <label class="settings-option">
+                            <span>Permitir análisis anónimo (local)</span>
+                            <input type="checkbox" id="dataTracking" checked>
+                        </label>
+
+                        <div class="settings-buttons">
+                            <button type="button" id="exportBtn" class="btn btn-secondary">Descargar mis datos</button>
+                            <button type="button" id="clearBtn" class="btn btn-danger">Limpiar preferencias</button>
+                            <button type="button" id="clearCacheBtn" class="btn btn-secondary">Limpiar caché de Sheets</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="info-box">
+                    <h3>Preferencias automáticas</h3>
+                    <p>Los cambios se guardan al instante en este navegador. No hace falta cuenta ni login.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nx-footer">
+        <div class="nx-footer-bottom">
+            <p>© 2026 Nexus Community — Call of Duty Mobile</p>
+        </div>
+    </footer>
+
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

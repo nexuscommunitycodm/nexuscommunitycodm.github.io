@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salas — Nexus Community</title>
+
+    <meta property="og:title" content="Salas de Juego — Nexus Community" />
+    <meta property="og:description" content="Dynasty, Limited, Vixen y Empire Room. Elige tu sala y compite." />
+    <meta property="og:image" content="logo/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nexus Community" />
+
+    <meta name="description" content="Salas de juego Nexus Community — Call of Duty Mobile" />
+    <meta name="author" content="Nexus Community" />
+
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="section-title">Salas de Juego</h1>
+                <p class="section-subtitle">Elige tu room, entra al campo de batalla y demuestra quién manda</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="rooms-grid">
+
+                    <!-- Dynasty Room -->
+                    <div class="room-card" data-sala="Dynasty Room" data-hora="19:00" style="--room-color:#E61C8A">
+                        <div class="room-logo">
+                            <img src="logos/DYNASTY.jpeg" alt="Dynasty Room" class="logo-img"
+                                 onerror="this.parentElement.innerHTML='<span class=\'room-logo-fallback\'>D</span>'">
+                        </div>
+                        <div class="room-timer-section">
+                            <div class="room-time status-normal">🕐 20:00</div>
+                            <div class="room-countdown">Próxima sala en...</div>
+                        </div>
+                        <div class="room-divider"></div>
+                        <div class="host-info">
+                            <div class="player-icon">👤</div>
+                            <div class="host-details">
+                                <div class="host-label">Host</div>
+                                <div class="host-name">Michi</div>
+                            </div>
+                        </div>
+                        <a href="sala-dynasty.html" class="btn-ingresar">Ingresar a la Sala</a>
+                    </div>
+
+                    <!-- Limited Room -->
+                    <div class="room-card" data-sala="Limited Room" data-hora="20:00" style="--room-color:#183A15">
+                        <div class="room-logo">
+                            <img src="logos/LIMITED.jpeg" alt="Limited Room" class="logo-img"
+                                 onerror="this.parentElement.innerHTML='<span class=\'room-logo-fallback\'>L</span>'">
+                        </div>
+                        <div class="room-timer-section">
+                            <div class="room-time status-normal">🕐 20:30</div>
+                            <div class="room-countdown">Próxima sala en...</div>
+                        </div>
+                        <div class="room-divider"></div>
+                        <div class="host-info">
+                            <div class="player-icon">👤</div>
+                            <div class="host-details">
+                                <div class="host-label">Host</div>
+                                <div class="host-name">Gayla</div>
+                            </div>
+                        </div>
+                        <a href="sala-limited.html" class="btn-ingresar">Ingresar a la Sala</a>
+                    </div>
+
+                    <!-- Vixen Room -->
+                    <div class="room-card" data-sala="Vixen Room" data-hora="21:00" style="--room-color:#A60201">
+                        <div class="room-logo">
+                            <img src="logos/VIXEN.jpeg" alt="Vixen Room" class="logo-img"
+                                 onerror="this.parentElement.innerHTML='<span class=\'room-logo-fallback\'>V</span>'">
+                        </div>
+                        <div class="room-timer-section">
+                            <div class="room-time status-normal">🕐 21:00</div>
+                            <div class="room-countdown">Próxima sala en...</div>
+                        </div>
+                        <div class="room-divider"></div>
+                        <div class="host-info">
+                            <div class="player-icon">👤</div>
+                            <div class="host-details">
+                                <div class="host-label">Host</div>
+                                <div class="host-name">Toxica</div>
+                            </div>
+                        </div>
+                        <a href="sala-vixen.html" class="btn-ingresar">Ingresar a la Sala</a>
+                    </div>
+
+                    <!-- Empire Room -->
+                    <div class="room-card" data-sala="Empire Room" data-hora="21:00" style="--room-color:#6A20A6">
+                        <div class="room-logo">
+                            <img src="logos/EMPIRE.jpeg" alt="Empire Room" class="logo-img"
+                                 onerror="this.parentElement.innerHTML='<span class=\'room-logo-fallback\'>E</span>'">
+                        </div>
+                        <div class="room-timer-section">
+                            <div class="room-time status-normal">🕐 21:30</div>
+                            <div class="room-countdown">Próxima sala en...</div>
+                        </div>
+                        <div class="room-divider"></div>
+                        <div class="host-info">
+                            <div class="player-icon">👤</div>
+                            <div class="host-details">
+                                <div class="host-label">Host</div>
+                                <div class="host-name">Jessi</div>
+                            </div>
+                        </div>
+                        <a href="sala-empire.html" class="btn-ingresar">Ingresar a la Sala</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nx-footer">
+        <div class="nx-footer-inner">
+            <div>
+                <h3>Nexus Community</h3>
+                <p>Comunidad competitiva de Call of Duty Mobile</p>
+            </div>
+            <div>
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="clanes.html">Clanes</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="salas.html">Salas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Redes</h3>
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nx-footer-bottom">
+            <p>© 2026 Nexus Community — Call of Duty Mobile</p>
+        </div>
+    </footer>
+
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/salas.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty Room — Nexus Community</title>
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main>
+        <section class="page-hero sala-hero" style="--room-color:#E61C8A">
+            <div class="container">
+                <img src="logos/DYNASTY.jpeg" alt="Dynasty Room" class="sala-hero-logo"
+                     onerror="this.style.display='none'">
+                <h1 class="section-title" style="color:#E61C8A">Dynasty Room</h1>
+                <p class="section-subtitle">Host: Michi · 7:00 pm mx</p>
+                <a href="salas.html" class="btn btn-secondary">← Volver a Salas</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container rules-wrap">
+                <h2 class="rules-title">Reglas</h2>
+
+                <div class="rules-card" style="--room-color:#E61C8A">
+                    <h3>Armas prohibidas</h3>
+                    <ul>
+                        <li>Armas del drop verde: Aniquiladora / Tempestad / Purificador / Máquina de Guerra</li>
+                        <li>Armas con: Mira térmica / Cargador explosivo / Munición de termita / Munición Omega</li>
+                        <li>MG42 con mira de francotirador</li>
+                    </ul>
+                </div>
+
+                <div class="rules-card" style="--room-color:#E61C8A">
+                    <h3>Explosivos tácticos</h3>
+                    <ul>
+                        <li>Termitas</li>
+                        <li>C4</li>
+                    </ul>
+                </div>
+
+                <div class="rules-card" style="--room-color:#E61C8A">
+                    <h3>Racha de puntos — todas</h3>
+                    <ul>
+                        <li>Helicóptero de Sigilo</li>
+                        <li>Ametrallamiento Aéreo</li>
+                        <li>RC-XD</li>
+                        <li>Ataque Relámpago</li>
+                        <li>Dron Bomba</li>
+                        <li>Halcón X3</li>
+                    </ul>
+                </div>
+
+                <div class="rules-card rules-puntos" style="--room-color:#E61C8A">
+                    <h3>Sistema de puntos</h3>
+                    <div class="puntos-grid">
+                        <div><span>1er</span><strong>20</strong></div>
+                        <div><span>2do</span><strong>15</strong></div>
+                        <div><span>3ro</span><strong>10</strong></div>
+                        <div><span>4 y 5</span><strong>6</strong></div>
+                        <div><span>6 al 10</span><strong>3</strong></div>
+                    </div>
+                    <p class="puntos-kill">1 KILL = 1 PUNTO</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+        <section class="section">
+            <div class="container">
+                <h2 class="rules-title">Ranking de la sala</h2>
+                <p class="section-subtitle" style="margin-bottom:1.25rem">Solo puntos de esta room · semana actual</p>
+                <div class="ranking-list" id="salaRanking" data-sala="dynasty"></div>
+            </div>
+        </section>
+
+    <footer class="nx-footer">
+        <div class="nx-footer-bottom"><p>© 2026 Nexus Community</p></div>
+    </footer>
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/sala-ranking.js"></script>
+
+</body>
+</html>

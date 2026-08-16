@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking — Nexus Community</title>
+
+    <meta property="og:title" content="Ranking — Nexus Community" />
+    <meta property="og:description" content="Ranking de puntos por sala. Dynasty, Limited, Vixen y Empire Room." />
+    <meta property="og:image" content="logo/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nexus Community" />
+
+    <meta name="description" content="Ranking semanal de puntos por sala — Nexus Community CODM" />
+    <meta name="author" content="Nexus Community" />
+
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="section-title">Ranking por Sala</h1>
+                <p class="section-subtitle">Puntos ganados durante la semana en cada room</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="filtros ranking-filtros" id="rankingFiltros">
+                    <button type="button" class="filtro-btn active" data-sala="dynasty" style="--sala-color:#E61C8A">Dynasty Room</button>
+                    <button type="button" class="filtro-btn" data-sala="limited" style="--sala-color:#183A15">Limited Room</button>
+                    <button type="button" class="filtro-btn" data-sala="vixen" style="--sala-color:#A60201">Vixen Room</button>
+                    <button type="button" class="filtro-btn" data-sala="empire" style="--sala-color:#6A20A6">Empire Room</button>
+                </div>
+
+                <div class="ranking-list" id="rankingContainer">
+                    <div class="mensaje-cargando">Cargando ranking...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nx-footer">
+        <div class="nx-footer-inner">
+            <div>
+                <h3>Nexus Community</h3>
+                <p>Comunidad competitiva de Call of Duty Mobile</p>
+            </div>
+            <div>
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="clanes.html">Clanes</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="salas.html">Salas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Redes</h3>
+                <ul>
+                    <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="#" target="_blank" rel="noopener">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nx-footer-bottom">
+            <p>© 2026 Nexus Community — Call of Duty Mobile</p>
+        </div>
+    </footer>
+
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/ranking.js"></script>
+</body>
+</html>
