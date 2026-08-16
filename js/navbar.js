@@ -69,7 +69,8 @@
                     <span></span><span></span><span></span>
                 </button>
             </div>
-        </nav>`;
+        </nav>
+        <div class="nx-nav-backdrop" id="nxNavBackdrop"></div>`;
     }
 
     function injectNavbar() {
@@ -86,24 +87,33 @@
 
         const hamburger = document.getElementById('nxHamburger');
         const navLinks  = document.getElementById('nxNavLinks');
+        const backdrop  = document.getElementById('nxNavBackdrop');
         if (!hamburger || !navLinks) return;
 
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            if (backdrop) backdrop.classList.remove('active');
+        }
+
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            const opening = !navLinks.classList.contains('active');
+            hamburger.classList.toggle('active', opening);
+            navLinks.classList.toggle('active', opening);
+            if (backdrop) backdrop.classList.toggle('active', opening);
         });
 
         navLinks.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
+            a.addEventListener('click', closeMenu);
         });
+
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMenu);
+        }
 
         document.addEventListener('click', e => {
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+                closeMenu();
             }
         });
     }
