@@ -1164,10 +1164,15 @@ html[data-theme="mono"] .nx-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    mix-blend-mode: screen;
+    mix-blend-mode: normal;
     filter: none;
     background: transparent;
     box-shadow: none;
+}
+
+html[data-theme="mono"] .room-logo .logo-img,
+html[data-theme="azure"] .room-logo .logo-img {
+    mix-blend-mode: screen;
 }
 
 .room-logo-fallback {
@@ -1685,13 +1690,12 @@ html[data-theme="azure"] .nx-logo img {
     50% { opacity: 0.65; }
 
 
-
 /* =====================================================
    PÁGINAS DE SALA — REGLAS
    ===================================================== */
 
 .sala-hero-logo {
-    width: min(250px, 28vw);
+    width: min(290px, 28vw);
     height: auto;
     margin: 0 auto 1.25rem;
     display: block;
