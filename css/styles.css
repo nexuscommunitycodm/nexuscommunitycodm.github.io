@@ -1193,9 +1193,9 @@ html[data-theme="azure"] .room-logo .logo-img {
     letter-spacing: 0.04em;
 }
 
-.room-time.status-normal { color: #44ff88; }
-.room-time.status-warning { color: #ffd700; }
-.room-time.status-active { color: #ff4444; }
+
+
+
 
 .room-countdown {
     font-size: 0.85rem;
@@ -1637,19 +1637,23 @@ html[data-theme="azure"] .nx-logo img {
 }
 
 
-/* Contador de salas */
+/* Contador de salas — sin glow, colores legibles */
 .room-time {
+    font-family: var(--font-display), var(--font-ui), sans-serif;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.35rem;
-    padding: 0.35rem 0.85rem;
-    border: 1.5px solid var(--room-color, #fff);
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--room-color, #fff);
     border-radius: 999px;
-    background: color-mix(in srgb, var(--room-color, #fff) 12%, transparent);
-    box-shadow: 0 0 12px color-mix(in srgb, var(--room-color, #fff) 45%, transparent);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    background: color-mix(in srgb, var(--room-color, #fff) 14%, transparent);
+    color: var(--room-color, #fff) !important;
+    text-shadow: none;
+    box-shadow: none;
 }
 
 .room-time.status-warning {
@@ -1657,37 +1661,49 @@ html[data-theme="azure"] .nx-logo img {
 }
 
 .room-time.status-active {
-    animation: pulse-clock 0.6s ease-in-out infinite;
-    box-shadow: 0 0 18px color-mix(in srgb, var(--room-color, #fff) 70%, transparent),
-                0 0 32px color-mix(in srgb, var(--room-color, #fff) 35%, transparent);
+    animation: pulse-clock 0.55s ease-in-out infinite;
+    border-width: 2px;
 }
 
 .room-time.status-weekend {
-    opacity: 0.85;
+    opacity: 0.95;
 }
 
 .room-countdown {
-    margin-top: 0.45rem;
+    margin-top: 0.5rem;
+    min-height: 2.5rem;
 }
 
 .countdown-main {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     color: var(--text);
+    line-height: 1.35;
 }
 
 .countdown-anot {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     margin-top: 0.35rem;
     line-height: 1.35;
 }
 
 @keyframes pulse-clock {
-    0%, 100% { opacity: 1; filter: brightness(1); }
-    50% { opacity: 0.75; filter: brightness(1.25); }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
-    50% { opacity: 0.65; }
+
+/* Limited Room: verde legible (el brand #183A15 es demasiado oscuro en texto) */
+.room-card[style*="#183A15"],
+.room-card[style*="#183a15"] {
+    --room-color: #3DDB6A;
+    --room-color-brand: #183A15;
+}
+.room-card[style*="#183A15"] .btn-ingresar,
+.room-card[style*="#183a15"] .btn-ingresar {
+    background: #183A15;
+    color: #fff;
+}
 
 
 /* =====================================================

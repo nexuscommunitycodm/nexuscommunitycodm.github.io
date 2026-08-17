@@ -20,7 +20,7 @@ async function initIndex() {
     if (!CONFIG.CLANES_URL || CONFIG.CLANES_URL.includes('PLACEHOLDER')) {
         if (statClanes) statClanes.textContent = '0';
         if (statJugadores) statJugadores.textContent = '0';
-        if (statSalas) statSalas.textContent = '0';
+        if (statSalas) statSalas.textContent = '4';
         if (contador) contador.textContent = 'Conecta las hojas de cálculo para ver los datos';
         if (container) {
             container.innerHTML = `
@@ -50,7 +50,7 @@ async function initIndex() {
 
         if (statClanes) statClanes.textContent = processed.length + '+';
         if (statJugadores) statJugadores.textContent = (processed.length * 4) + '+';
-        if (statSalas) statSalas.textContent = '—'; // se puede calcular después
+        if (statSalas) statSalas.textContent = '4';
         if (contador) {
             contador.textContent = `${processed.length} clanes compitiendo — estos lideran en el medallero`;
         }
