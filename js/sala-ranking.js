@@ -1,7 +1,6 @@
 /**
  * RANKING embebido en página de cada sala
- * Uso: <div id="salaRanking" data-sala="dynasty"></div>
- *      <script src="js/sala-ranking.js"></script>
+ * Muestra: nombre del equipo + TOTAL
  */
 (function () {
     const SALAS = {
@@ -25,33 +24,19 @@
 
     function parseSalaRanking(data) {
         if (!data || !data.length) return [];
-
-        const hasNew = data.length > 3 && data.slice(3).some(r => {
-            const v = parseFloat(r[13]);
-            return r[13] !== undefined && !isNaN(v) && v > 0;
-        });
-        if (hasNew) {
-            return data.slice(3)
-                .map(r => ({ nombre: (r[1] || '').trim(), puntos: parseFloat(r[13]) || 0 }))
-                .filter(x => x.nombre && x.puntos > 0)
-                .sort((a, b) => b.puntos - a.puntos);
-        }
-
-        const has17 = data.some(r => (r[17] || '').toString().trim() !== '');
-        if (has17) {
-            return data
-                .map(r => ({ nombre: (r[17] || '').trim(), puntos: parseFloat(r[23]) || 0 }))
-                .filter(x => x.nombre)
-                .sort((a, b) => b.puntos - a.puntos);
-        }
-
         return data
-            .map(r => ({
-                nombre: (r[1] || r[0] || '').trim(),
-                puntos: parseFloat(r[2] || r[13] || r[7]) || 0,
-            }))
-            .filter(x => x.nombre && !/^lugar$/i.test(x.nombre) && x.puntos > 0)
-            .sort((a, b) => b.puntos - a.puntos);
+            .map(r => {
+                const nombre = String(r[1] || '').trim();
+                const total = parseFloat(String(r[6] || '0').replace(',', '.')) || 0;
+                return { nombre, puntos: total };
+            })
+            .filter(x => {
+                if (!x.nombre) return false;
+                const n = x.nombre.toLowerCase();
+                if (n.includes('nombre') || n === 's' || n === 'total') return false;
+                return true;
+            })
+            .sort((a, b) => b.puntos - a.puntos || a.nombre.localeCompare(b.nombre));
     }
 
     function render(container, items, cfg) {
@@ -73,7 +58,7 @@
                 </div>
                 <div class="rank-score">
                     <div class="rank-score-num">${formatNumber(clan.puntos)}</div>
-                    <div class="rank-score-label">puntos</div>
+                    <div class="rank-score-label">total</div>
                 </div>
             </article>`;
         });
@@ -101,11 +86,7 @@
 
         const url = CONFIG[cfg.urlKey];
         if (!url || String(url).includes('PLACEHOLDER')) {
-            el.innerHTML = `
-                <div class="mensaje-cargando">
-                    Aún no hay hoja de ranking para <strong>${escapeHtml(cfg.label)}</strong>.<br>
-                    <span class="text-muted" style="font-size:0.9rem">Configura <code>${cfg.urlKey}</code> en config-global.js</span>
-                </div>`;
+            el.innerHTML = `<div class="mensaje-cargando">Aún no hay hoja de ranking para <strong>${escapeHtml(cfg.label)}</strong>.</div>`;
             return;
         }
 

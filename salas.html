@@ -121,6 +121,18 @@
                 </div>
             </div>
         </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Streamers de las Salas</h2>
+                <p class="section-subtitle">Hosts en TikTok</p>
+                <div class="streamers-grid" id="streamersSalas"></div>
+                <div class="actions-row" style="margin-top:2rem">
+                    <a href="torneos.html" class="btn btn-primary">Ver Torneos BR</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="nx-footer">
@@ -156,5 +168,19 @@
     <script src="js/theme.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/salas.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("streamersSalas");
+        if (!el || !CONFIG.STREAMERS) return;
+        el.innerHTML = CONFIG.STREAMERS.map(s => `
+            <a class="streamer-card" href="${s.url}" target="_blank" rel="noopener" style="--room-color:${s.color || '#fff'}">
+                <div class="streamer-sala">${s.sala || s.nombre}</div>
+                <div class="streamer-name">${s.nombre}</div>
+                <div class="streamer-handle">${s.handle}</div>
+                <span class="streamer-cta">Ver en TikTok →</span>
+            </a>
+        `).join("");
+    });
+    </script>
 </body>
 </html>

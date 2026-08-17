@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function initIndex() {
+    loadTorneosHome();
+    loadStreamersHome();
+
     const container = document.getElementById('clanesDestacados');
     const statClanes = document.getElementById('statClanes');
     const statJugadores = document.getElementById('statJugadores');
@@ -116,4 +119,78 @@ function renderDestacados(clans) {
     });
 
     container.innerHTML = html;
+}
+
+
+async function loadTorneosHome() {
+    const el = document.getElementById('torneosHome');
+    if (!el) return;
+    try {
+        if (typeof obtenerTorneosRecientes !== 'function') {
+            el.innerHTML = '<div class="mensaje-cargando">Torneos no disponibles</div>';
+            return;
+        }
+        const data = await obtenerTorneosRecientes(4);
+        if (!data.length) {
+            el.innerHTML = '<div class="mensaje-cargando">Aún no hay torneos publicados</div>';
+            return;
+        }
+        // reutilizar renderer si existe tbrGrid pattern
+        el.innerHTML = '';
+        const hoy = new Date();
+        data.forEach((t, i) => {
+            let fechaFormato = 'Sin fecha';
+            let pasado = false;
+            if (t.fecha) {
+                const ft = new Date(t.fecha + 'T23:59:59');
+                if (!isNaN(ft.getTime())) {
+                    fechaFormato = ft.toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+                    pasado = ft < hoy;
+                }
+            }
+            const tags = [t.tag1, t.tag2, t.tag3, t.tag4, t.tag5].filter(Boolean)
+                .map(tag => `<span class="torneo-tag">${escapeHome(tag)}</span>`).join('');
+            const card = document.createElement('article');
+            card.className = `tbr-card${pasado ? '' : ' es-proximo'}`;
+            card.innerHTML = `
+                <img class="tbr-img" src="${escapeHome(t.imagen)}" alt="Torneo"
+                     onerror="this.style.display='none'">
+                <div class="tbr-body">
+                    <div class="tbr-num">TORNEO BR</div>
+                    <div class="tbr-fecha"><span>📅</span><span>${escapeHome(fechaFormato)}${t.hora ? ' · 🕗 ' + escapeHome(t.hora) : ''}</span></div>
+                    ${tags ? `<div class="tbr-tags">${tags}</div>` : ''}
+                    <div class="tbr-badge ${pasado ? 'finalizado' : 'proximo'}">
+                        <span class="tbr-dot"></span>
+                        <span>${pasado ? 'FINALIZADO' : 'PRÓXIMO'}</span>
+                    </div>
+                </div>`;
+            el.appendChild(card);
+        });
+    } catch (e) {
+        console.error(e);
+        el.innerHTML = '<div class="error-message">No se pudieron cargar los torneos</div>';
+    }
+}
+
+function escapeHome(text) {
+    const d = document.createElement('div');
+    d.textContent = text == null ? '' : String(text);
+    return d.innerHTML;
+}
+
+function loadStreamersHome() {
+    const el = document.getElementById('streamersHome');
+    if (!el || !CONFIG.STREAMERS) return;
+    if (!CONFIG.STREAMERS.length) {
+        el.innerHTML = '';
+        return;
+    }
+    el.innerHTML = CONFIG.STREAMERS.map(s => `
+        <a class="streamer-card" href="${s.url}" target="_blank" rel="noopener" style="--room-color:${s.color || '#fff'}">
+            <div class="streamer-sala">${s.sala || s.nombre}</div>
+            <div class="streamer-name">${s.nombre}</div>
+            <div class="streamer-handle">${s.handle}</div>
+            <span class="streamer-cta">Ver en TikTok →</span>
+        </a>
+    `).join('');
 }

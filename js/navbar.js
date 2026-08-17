@@ -18,6 +18,7 @@
         { href: 'clanes.html',   label: 'Clanes' },
         { href: 'ranking.html',  label: 'Ranking' },
         { href: 'salas.html',    label: 'Salas' },
+        { href: 'torneos.html',  label: 'Torneos' },
         { href: 'settings.html', label: 'Config' },
     ];
 

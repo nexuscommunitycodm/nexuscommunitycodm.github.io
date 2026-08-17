@@ -1817,3 +1817,158 @@ html[data-theme="azure"] .nx-logo img {
     font-size: 0.88rem;
     font-weight: 600;
 }
+
+/* =====================================================
+   TORNEOS BR
+   ===================================================== */
+.tbr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+.tbr-grid-home {
+    margin-bottom: 0.5rem;
+}
+.tbr-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), border-color var(--transition);
+}
+.tbr-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-light);
+}
+.tbr-card.es-proximo {
+    border-color: rgba(68, 255, 136, 0.35);
+}
+.tbr-img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    background: var(--bg);
+}
+.tbr-body {
+    padding: 1.1rem 1.15rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    flex: 1;
+}
+.tbr-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+.tbr-fecha {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 700;
+    font-size: 0.98rem;
+}
+.tbr-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.torneo-tag {
+    display: inline-block;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.28);
+    color: var(--gold);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.tbr-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-top: auto;
+}
+.tbr-badge.proximo {
+    background: rgba(68, 255, 136, 0.12);
+    border: 1px solid rgba(68, 255, 136, 0.4);
+    color: #44ff88;
+}
+.tbr-badge.finalizado {
+    background: rgba(160, 160, 160, 0.08);
+    border: 1px solid rgba(160, 160, 160, 0.25);
+    color: var(--text-muted);
+}
+.tbr-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.proximo .tbr-dot {
+    background: #44ff88;
+    box-shadow: 0 0 8px #44ff88;
+    animation: pdot 1.6s infinite;
+}
+.finalizado .tbr-dot { background: #666; }
+@keyframes pdot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(1.3); }
+}
+
+/* =====================================================
+   STREAMERS
+   ===================================================== */
+.streamers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+.streamer-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.35rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--room-color, var(--text));
+    border-radius: var(--radius);
+    transition: border-color var(--transition), transform var(--transition);
+}
+.streamer-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--room-color, var(--border-light));
+}
+.streamer-sala {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--room-color, var(--text-muted));
+    font-weight: 700;
+}
+.streamer-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.streamer-handle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+.streamer-cta {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--room-color, var(--text));
+}
