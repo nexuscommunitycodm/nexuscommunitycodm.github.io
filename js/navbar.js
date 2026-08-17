@@ -22,7 +22,7 @@
         { href: 'settings.html', label: 'Config' },
     ];
 
-    const REGISTER_URL = 'https://forms.gle/6WthmbfQMmrYBFdx9';
+    const REGISTER_URL = 'https://forms.gle/C3TZ8CuTpfPhzsez6';
 
     const WORDMARKS = {
         mono:  'logo/wordmark-mono.jpg',
