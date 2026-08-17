@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baneos — Nexus Community</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="section-title">Baneos</h1>
+                <p class="section-subtitle" id="baneosCount">Uso interno · no listado en el menú</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="search-panel" style="max-width:720px">
+                    <div class="search-bar">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="banSearch" placeholder="Buscar clan, jugador, UID..." autocomplete="off">
+                    </div>
+                    <div class="filtros" id="banFiltros">
+                        <button type="button" class="filtro-btn active" data-tipo="todos">Todos</button>
+                        <button type="button" class="filtro-btn" data-tipo="clan">Clanes</button>
+                        <button type="button" class="filtro-btn" data-tipo="jugador">Jugadores</button>
+                    </div>
+                    <p class="search-result" id="banResultado"></p>
+                </div>
+
+                <div class="baneos-list" id="baneosList">
+                    <div class="mensaje-cargando">Cargando baneos...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="nx-footer">
+        <div class="nx-footer-inner">
+            <div class="nx-footer-brand">
+                <img src="logo/wordmark-mono.jpg" alt="Nexus Community" class="nx-wordmark" data-nexus-logo="wordmark">
+                <p>Comunidad competitiva de Call of Duty Mobile</p>
+            </div>
+            <div>
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="clanes.html">Clanes</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="salas.html">Salas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Redes</h3>
+                <ul>
+                    <li><a href="https://www.tiktok.com/@nexus_community_codm" target="_blank" rel="noopener">TikTok</a></li>
+                    <li><a href="https://www.instagram.com/nexuscommunitycodm" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://discord.gg/jKJKMApFX" target="_blank" rel="noopener">Discord</a></li>
+                    <li><a href="https://chat.whatsapp.com/KMFxB5W4Bw17WbG1IzZFYd" target="_blank" rel="noopener">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nx-footer-bottom">
+            <p>© 2026 Nexus Community — Call of Duty Mobile</p>
+        </div>
+    </footer>
+
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/baneos.js"></script>
+</body>
+</html>

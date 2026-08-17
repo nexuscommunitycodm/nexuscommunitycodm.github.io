@@ -15,6 +15,25 @@ const CONFIG = {
     // Clanes + puestos 1º / 2º / 3º (Oro, Plata, Bronce)
     CLANES_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRokGDiYpw_QV0WtS7dqPXdZFsBRrQWawAH5kzK9Jodgun6Cy2lNalOhRiE6XIZ69pwtJFwHWmZBRTP/pub?gid=2010911080&single=true&output=csv',
 
+    // Baneos públicos (formulario → hoja CSV)
+    BANEOS_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRokGDiYpw_QV0WtS7dqPXdZFsBRrQWawAH5kzK9Jodgun6Cy2lNalOhRiE6XIZ69pwtJFwHWmZBRTP/pub?gid=621323211&single=true&output=csv',
+
+    // Columnas hoja BANEOS (orden del formulario)
+    // 0 Marca temporal | 1 Tipo | 2 Nombre clan | 3 Tel líder | 4 Nombre jugador
+    // 5 UID | 6 Razón | 7 Prueba (URL) | 8 Comunidad/CEO | 9 Notas
+    BANEOS_COLUMNS: {
+        TIMESTAMP: 0,
+        TIPO: 1,           // 'Clan' | 'Jugador'
+        NOMBRE_CLAN: 2,
+        TELEFONO_LIDER: 3,
+        NOMBRE_JUGADOR: 4,
+        UID: 5,
+        RAZON: 6,
+        PRUEBA: 7,
+        COMUNIDAD: 8,
+        NOTAS: 9,
+    },
+
     TORNEO_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRokGDiYpw_QV0WtS7dqPXdZFsBRrQWawAH5kzK9Jodgun6Cy2lNalOhRiE6XIZ69pwtJFwHWmZBRTP/pub?gid=218312983&single=true&output=csv',
 
     // Ranking semanal de puntos por room (publica cada hoja como CSV)
