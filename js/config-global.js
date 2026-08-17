@@ -34,6 +34,11 @@ const CONFIG = {
         NOTAS: 9,
     },
 
+    // Videos de torneos (col: timestamp | URL Drive)
+    // Clave = fecha del torneo YYYY-MM-DD
+    TORNEO_VIDEOS_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRokGDiYpw_QV0WtS7dqPXdZFsBRrQWawAH5kzK9Jodgun6Cy2lNalOhRiE6XIZ69pwtJFwHWmZBRTP/pub?gid=90932125&single=true&output=csv',
+    TORNEO_VIDEOS_FECHA: '2026-04-11', // torneo 11/4/2026
+
     TORNEO_URL: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRokGDiYpw_QV0WtS7dqPXdZFsBRrQWawAH5kzK9Jodgun6Cy2lNalOhRiE6XIZ69pwtJFwHWmZBRTP/pub?gid=218312983&single=true&output=csv',
 
     // Ranking semanal de puntos por room (publica cada hoja como CSV)

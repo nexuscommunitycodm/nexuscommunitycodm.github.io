@@ -111,6 +111,11 @@ function renderTorneosFromData(data, grid) {
         const estadoTxt = pasado ? 'FINALIZADO' : 'PRÓXIMO';
         const tags = [t.tag1, t.tag2, t.tag3, t.tag4, t.tag5].filter(Boolean);
         const tagsHTML = tags.map(tag => `<span class="torneo-tag">${escapeHtml(tag)}</span>`).join('');
+        const videosFecha = (typeof CONFIG !== 'undefined' && CONFIG.TORNEO_VIDEOS_FECHA) ? CONFIG.TORNEO_VIDEOS_FECHA : '';
+        const hasVideos = videosFecha && t.fecha === videosFecha;
+        const videosBtn = hasVideos
+            ? `<a class="tbr-videos-btn" href="torneo-videos.html?fecha=${encodeURIComponent(t.fecha)}">🎬 Ver videos</a>`
+            : '';
         const numTorneo = data.length - i;
 
         const card = document.createElement('article');
@@ -125,6 +130,7 @@ function renderTorneosFromData(data, grid) {
                     <span>${escapeHtml(fechaFormato)}${t.hora ? ' · 🕗 ' + escapeHtml(t.hora) : ''}</span>
                 </div>
                 ${tagsHTML ? `<div class="tbr-tags">${tagsHTML}</div>` : ''}
+                ${videosBtn}
                 <div class="tbr-badge ${estado}">
                     <span class="tbr-dot"></span>
                     <span>${estadoTxt}</span>
