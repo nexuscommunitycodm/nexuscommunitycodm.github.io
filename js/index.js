@@ -187,6 +187,7 @@ function loadStreamersHome() {
     }
     el.innerHTML = CONFIG.STREAMERS.map(s => `
         <a class="streamer-card" href="${s.url}" target="_blank" rel="noopener" style="--room-color:${s.color || '#fff'}">
+            ${s.img ? `<img src="${s.img}" alt="${s.nombre}" style="width:72px;height:72px;object-fit:cover;border-radius:12px;margin:0 auto 0.5rem;display:block" onerror="this.style.display='none'">` : ''}
             <div class="streamer-sala">${s.sala || s.nombre}</div>
             <div class="streamer-name">${s.nombre}</div>
             <div class="streamer-handle">${s.handle}</div>

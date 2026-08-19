@@ -19,6 +19,8 @@
         { href: 'ranking.html',  label: 'Ranking' },
         { href: 'salas.html',    label: 'Salas' },
         { href: 'torneos.html',  label: 'Torneos' },
+        { href: 'streamers.html', label: 'Streamers' },
+        { href: 'reglas-champ.html', label: 'Reglas' },
         { href: 'settings.html', label: 'Config' },
     ];
 

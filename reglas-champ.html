@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas Championship 2026 — Nexus Community</title>
+    <meta property="og:title" content="Reglas Championship 2026 — Nexus Community" />
+    <meta property="og:description" content="Reglas actualizadas Championship 2026 Call of Duty Mobile" />
+    <meta property="og:image" content="https://nexuscodm.com/logo/logo.png" />
+    <meta name="twitter:image" content="https://nexuscodm.com/logo/logo.png" />
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .champ-hero {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            background: radial-gradient(ellipse at top, rgba(180, 255, 0, 0.12), transparent 55%);
+        }
+        .champ-badge {
+            display: inline-block;
+            font-family: var(--font-display);
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
+            color: #c8ff00;
+            border: 1px solid rgba(200,255,0,0.35);
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+        .champ-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.15rem;
+            margin-bottom: 2rem;
+        }
+        .mode-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .mode-card-img {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #1a2a00, #0d0d0d);
+            border-bottom: 1px solid var(--border);
+        }
+        .mode-card.hp .mode-card-img { background: linear-gradient(135deg, #2a3a00, #111); }
+        .mode-card.snd .mode-card-img { background: linear-gradient(135deg, #3a1a00, #111); }
+        .mode-card.ctrl .mode-card-img { background: linear-gradient(135deg, #001a3a, #111); }
+        .mode-card-body { padding: 1.1rem 1.15rem 1.25rem; }
+        .mode-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            letter-spacing: 0.06em;
+            margin: 0 0 0.5rem;
+            color: #c8ff00;
+        }
+        .mode-meta {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.65rem;
+            line-height: 1.45;
+        }
+        .map-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .mode-icon {
+            width: 64px;
+            height: 64px;
+            filter: drop-shadow(0 0 8px rgba(200,255,0,0.35));
+        }
+        .rule-tile-icon img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .map-card img {
+            width: 100%;
+            height: 72px !important;
+            object-fit: cover;
+            display: block;
+            background: #1a1a1a;
+        }
+        .mode-icon {
+            width: 56px !important;
+            height: 56px !important;
+        }
+        .map-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .map-card {
+            background: #0a0a0a;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .map-card img {
+            width: 100%;
+            height: 64px;
+            object-fit: cover;
+            display: block;
+            background: #111;
+        }
+        .map-card span {
+            display: block;
+            font-size: 0.72rem;
+            padding: 0.3rem 0.25rem;
+            color: var(--text-muted);
+        }
+        .map-chip {
+            font-size: 0.78rem;
+            padding: 0.25rem 0.55rem;
+            border-radius: 6px;
+            background: rgba(200,255,0,0.08);
+            border: 1px solid rgba(200,255,0,0.2);
+            color: var(--text);
+        }
+        .rule-section {
+            margin-bottom: 2rem;
+        }
+        .rule-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding-left: 0.65rem;
+            border-left: 3px solid #c8ff00;
+            color: #c8ff00;
+        }
+        .rule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.75rem;
+        }
+        .rule-tile {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.9rem 0.65rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .rule-tile-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            background: rgba(200,255,0,0.08);
+            border: 1px solid rgba(200,255,0,0.15);
+        }
+        .rule-tile.ban .rule-tile-icon {
+            background: rgba(255,60,60,0.1);
+            border-color: rgba(255,60,60,0.25);
+        }
+        .rule-tile.ok .rule-tile-icon {
+            background: rgba(60,255,120,0.08);
+            border-color: rgba(60,255,120,0.2);
+        }
+        .rule-tile-name {
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: var(--text);
+        }
+        .rule-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .rule-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.1rem 1.2rem;
+        }
+        .rule-box h3 {
+            margin: 0 0 0.65rem;
+            font-size: 0.95rem;
+            color: #c8ff00;
+            font-family: var(--font-display);
+            letter-spacing: 0.05em;
+        }
+        .rule-box ul {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+        .rule-box.ban-box { border-color: rgba(255,80,80,0.35); }
+        .rule-box.ban-box h3 { color: #ff6b6b; }
+        .rule-box.ok-box { border-color: rgba(80,255,140,0.3); }
+        .rule-box.ok-box h3 { color: #6dff9a; }
+        .warn-box {
+            background: rgba(255,180,0,0.08);
+            border: 1px solid rgba(255,180,0,0.35);
+            border-radius: var(--radius);
+            padding: 1.15rem 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .warn-box h3 { color: #ffc107; margin: 0 0 0.5rem; font-family: var(--font-display); }
+        .warn-box ul { margin: 0; padding-left: 1.1rem; color: var(--text-muted); line-height: 1.5; }
+        .pool-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+        .pool-table th, .pool-table td {
+            border: 1px solid var(--border);
+            padding: 0.55rem 0.75rem;
+            text-align: left;
+        }
+        .pool-table th {
+            background: rgba(200,255,0,0.08);
+            color: #c8ff00;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <main>
+        <section class="champ-hero">
+            <div class="container">
+                <div class="champ-badge">CHAMPIONSHIP 2026</div>
+                <h1 class="section-title">Reglas actualizadas</h1>
+                <p class="section-subtitle">Call of Duty Mobile · Formato competitivo</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+            <div class="container">
+
+                <!-- MODOS -->
+                <div class="rule-section">
+                    <h2>Modos de juego</h2>
+                    <div class="champ-modes">
+                        <article class="mode-card hp">
+                            <div class="mode-card-img" title="Hardpoint"><img src="img/rules/tw-target.svg" alt="" class="mode-icon"></div>
+                            <div class="mode-card-body">
+                                <h3>Hardpoint</h3>
+                                <div class="mode-meta">
+                                    <strong>250 puntos</strong> · 600 segundos<br>
+                                    Controla el punto para sumar
+                                </div>
+<div class="map-cards"><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/summit.webp" alt="Summit" loading="lazy" referrerpolicy="no-referrer"><span>Summit</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/hacienda.webp" alt="Hacienda" loading="lazy" referrerpolicy="no-referrer"><span>Hacienda</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/combine.webp" alt="Combine" loading="lazy" referrerpolicy="no-referrer"><span>Combine</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/takeoff.webp" alt="Takeoff" loading="lazy" referrerpolicy="no-referrer"><span>Takeoff</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/arsenal.webp" alt="Arsenal" loading="lazy" referrerpolicy="no-referrer"><span>Arsenal</span></div></div>
+                            </div>
+                        </article>
+                        <article class="mode-card snd">
+                            <div class="mode-card-img" title="Buscar y Destruir"><img src="img/rules/tw-bomb.svg" alt="" class="mode-icon"></div>
+                            <div class="mode-card-body">
+                                <h3>Buscar y Destruir</h3>
+                                <div class="mode-meta">
+                                    <strong>9 rondas</strong> · 120 segundos<br>
+                                    Planta / desactiva la bomba
+                                </div>
+<div class="map-cards"><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/tunisia.webp" alt="Tunisia" loading="lazy" referrerpolicy="no-referrer"><span>Tunisia</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/firing-range.webp" alt="Firing Range" loading="lazy" referrerpolicy="no-referrer"><span>Firing Range</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/coastal.webp" alt="Coastal" loading="lazy" referrerpolicy="no-referrer"><span>Coastal</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/slums.webp" alt="Slums" loading="lazy" referrerpolicy="no-referrer"><span>Slums</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/meltdown.webp" alt="Meltdown" loading="lazy" referrerpolicy="no-referrer"><span>Meltdown</span></div></div>
+                            </div>
+                        </article>
+                        <article class="mode-card ctrl">
+                            <div class="mode-card-img" title="Control"><img src="img/rules/tw-chess.svg" alt="" class="mode-icon"></div>
+                            <div class="mode-card-body">
+                                <h3>Control</h3>
+                                <div class="mode-meta">
+                                    <strong>3 rondas</strong> · 90 segundos<br>
+                                    Captura y defiende zonas
+                                </div>
+<div class="map-cards"><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/raid.webp" alt="Raid" loading="lazy" referrerpolicy="no-referrer"><span>Raid</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/standoff.webp" alt="Standoff" loading="lazy" referrerpolicy="no-referrer"><span>Standoff</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/crossroads.webp" alt="Crossroads" loading="lazy" referrerpolicy="no-referrer"><span>Crossroads</span></div><div class="map-card"><img loading="lazy" onerror="this.style.opacity=0.3" src="img/rules/maps/strike.webp" alt="Strike" loading="lazy" referrerpolicy="no-referrer"><span>Strike</span></div></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- ROLES -->
+                <div class="rule-section">
+                    <h2>Roles de clase de arma</h2>
+                    <div class="rule-grid">
+                        <div class="rule-tile"><div class="rule-tile-icon"><img src="img/rules/tw-gun.svg" alt=""></div><div class="rule-tile-name">AR<br>Fusil de asalto</div></div>
+                        <div class="rule-tile"><div class="rule-tile-icon"><img src="img/rules/tw-zap.svg" alt=""></div><div class="rule-tile-name">SMG<br>Subfusil</div></div>
+                        <div class="rule-tile"><div class="rule-tile-icon"><img src="img/rules/tw-shield.svg" alt=""></div><div class="rule-tile-name">LMG<br>Ametralladora ligera</div></div>
+                        <div class="rule-tile"><div class="rule-tile-icon"><img src="img/rules/tw-boom.svg" alt=""></div><div class="rule-tile-name">Escopeta</div></div>
+                        <div class="rule-tile"><div class="rule-tile-icon"><img src="img/rules/tw-target.svg" alt=""></div><div class="rule-tile-name">Sniper</div></div>
+                        <div class="rule-tile"><div class="rule-tile-icon"><img src="img/rules/tw-dart.svg" alt=""></div><div class="rule-tile-name">Tirador</div></div>
+                    </div>
+                </div>
+
+                <!-- POOL -->
+                <div class="rule-section">
+                    <h2>Pool disponible por equipo</h2>
+                    <div class="rule-box">
+                        <table class="pool-table">
+                            <thead>
+                                <tr><th>Cantidad</th><th>Clase</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>3</td><td>ARs</td></tr>
+                                <tr><td>3</td><td>SMGs</td></tr>
+                                <tr><td>1</td><td>LMG</td></tr>
+                                <tr><td>1</td><td>Escopeta</td></tr>
+                                <tr><td>1</td><td>Sniper</td></tr>
+                                <tr><td>1</td><td>Tirador</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="rule-box" style="margin-top:1rem">
+                        <h3>Ejemplo de rol por serie</h3>
+                        <ul>
+                            <li>Jugador 1 — AR / SMG</li>
+                            <li>Jugador 2 — SMG / Escopeta</li>
+                            <li>Jugador 3 — AR / LMG</li>
+                            <li>Jugador 4 — AR / Sniper</li>
+                            <li>Jugador 5 — SMG / Tirador</li>
+                        </ul>
+                    </div>
+                </div>
+
+                                <!-- LETAL / TACTICO -->
+                <div class="rule-section">
+                    <h2>Equipamiento letal y táctico</h2>
+                    <div class="rule-list">
+                        <div class="rule-box ok-box">
+                            <h3>✅ Letal válidas</h3>
+                            <div class="rule-grid">
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-boom.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Granada de fragmentación</div></div>
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-bomb.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Granada adhesiva</div></div>
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-knife.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Hacha de combate</div></div>
+                            </div>
+                        </div>
+                        <div class="rule-box ban-box">
+                            <h3>🚫 Letal no permitidas</h3>
+                            <div class="rule-grid">
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Termita</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Cóctel molotov</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Granada de contacto</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">C4</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Carga de perforación</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Mina trampa</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Granada de racimo</div></div>
+                            </div>
+                        </div>
+                        <div class="rule-box ok-box">
+                            <h3>✅ Táctico válidos</h3>
+                            <div class="rule-grid">
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-shield.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Sistema Trophy</div></div>
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-zap.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Granada cegadora</div></div>
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-fog.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Granada de humo</div></div>
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-boom.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">Granada de conmoción</div></div>
+                                <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-satellite.svg" alt="" style="width:28px;height:28px"></div><div class="rule-tile-name">PEM</div></div>
+                            </div>
+                        </div>
+                        <div class="rule-box ban-box">
+                            <h3>🚫 Táctico no permitidos</h3>
+                            <div class="rule-grid">
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Bomba criogénica</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Sensor de proximidad</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Granada de gas</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Bola de tormenta</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Dron cegador</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Granada señuelo</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Inyección estimulante</div></div>
+                                <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Sensor de movimiento</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="section-subtitle" style="text-align:left;margin-top:0.75rem">No letal ni táctico legendario.</p>
+                </div>
+
+                <div class="rule-section">
+                    <h2>Rachas de puntos válidas</h2>
+                    <div class="rule-grid">
+                        <div class="rule-tile ok">
+                            <div class="rule-tile-icon"><img src="img/rules/streaks/hunter-killer.webp" alt="" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div>
+                            <div class="rule-tile-name">Dron cazador<br><span style="opacity:.7;font-size:.75rem">500 pts</span></div>
+                        </div>
+                        <div class="rule-tile ok">
+                            <div class="rule-tile-icon"><img src="img/rules/streaks/predator.webp" alt="" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div>
+                            <div class="rule-tile-name">Misil Predator<br><span style="opacity:.7;font-size:.75rem">700 pts</span></div>
+                        </div>
+                        <div class="rule-tile ok">
+                            <div class="rule-tile-icon"><img src="img/rules/streaks/emp.webp" alt="" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div>
+                            <div class="rule-tile-name">Sistemas PEM<br><span style="opacity:.7;font-size:.75rem">1000 pts</span></div>
+                        </div>
+                    </div>
+                    <p class="section-subtitle" style="text-align:left;margin-top:0.75rem">
+                        El resto de rachas (UAV, RC-XD, Goliath, VTOL, Enjambre, Paquete de ayuda, etc.) <strong>no están permitidas</strong>.
+                    </p>
+                </div>
+
+                <div class="rule-section">
+                    <h2>Armas ban</h2>
+                    <div class="rule-grid">
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">NA-45</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">SVD</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">XPR</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Thumper</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Shorty</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">SMRS</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">FHJ-18</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">Argus</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">D13 Sector</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-noentry.svg" alt=""></div><div class="rule-tile-name">SO14</div></div>
+                    </div>
+                    <p class="section-subtitle" style="margin-top:0.75rem;text-align:left">Todos los comodines están restringidos.</p>
+                </div>
+
+                <!-- ACCESORIOS BAN -->
+                <div class="rule-section">
+                    <h2>Armas / accesorios ban (resumen)</h2>
+                    <div class="rule-list">
+                        <div class="rule-box ban-box">
+                            <h3>🚫 Accesorios / attachments ban</h3>
+                            <ul>
+                                <li>Akimbo</li>
+                                <li>Granadas / municiones especiales restringidas (termita, gas, etc.)</li>
+                                <li>Cargadores y cañones listados en la hoja oficial de bans</li>
+                                <li>Munición incendiaria, de aliento de dragón, explosiva y de termita</li>
+                            </ul>
+                            <p style="font-size:0.85rem;color:var(--text-dim);margin:0.75rem 0 0">Consulta el comunicado oficial completo para la lista detallada de attachments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OPERADORES -->
+                <div class="rule-section">
+                    <h2>Operadores</h2>
+                    <div class="rule-list">
+                        <div class="rule-box ok-box">
+                            <h3>✅ Operadores válidos</h3>
+<div class="rule-grid">
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/purifier.webp" alt="Purificador" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Purificador</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/warmachine.webp" alt="Máquina de guerra" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Máquina de guerra</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/deathmachine.webp" alt="Máquina de muerte" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Máquina de muerte</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/sparrow.webp" alt="Halcón" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Halcón</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-zap.svg" alt="Tempestad" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Tempestad</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/gravityspikes.webp" alt="Picos de gravedad" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Picos de gravedad</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/annihilator.webp" alt="Aniquilador" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Aniquilador</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/equalizer.webp" alt="Nivelador" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Nivelador</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/hive.webp" alt="H.I.V.E." loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">H.I.V.E.</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/ops/claw.webp" alt="Garra" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Garra</div></div>
+</div>
+                        </div>
+                        <div class="rule-box ban-box">
+                            <h3>🚫 Uso de operadores</h3>
+                            <ul>
+                                <li>No se permiten operadores repetidos</li>
+                                <li>Si un jugador muerto está cambiando su habilidad, un compañero vivo sí puede tener la misma habilidad sin penalización</li>
+                                <li>Las habilidades pueden cambiarse en cualquier momento si no se duplican</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VENTAJAS -->
+                <div class="rule-section">
+                    <h2>Ventajas válidas</h2>
+<div class="rule-grid">
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/tracker.webp" alt="Acechador" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Acechador</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/quickfix.webp" alt="Recuperación rápida" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Recuperación rápida</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/flak.webp" alt="Traje antibombas" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Traje antibombas</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/lightweight.webp" alt="Ágil" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Ágil</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/lightweight.webp" alt="Peso ligero" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Peso ligero</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/ironlungs.webp" alt="Pulmones de acero" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Pulmones de acero</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/hardline.webp" alt="Valiente" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Valiente</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/restock.webp" alt="Despiadado" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Despiadado</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/toughness.webp" alt="Dureza" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Dureza</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/ghost.webp" alt="Ghost" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Ghost</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/highalert.webp" alt="Habilidad innata" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Habilidad innata</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/amped.webp" alt="Amplificado" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Amplificado</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/fastrecover.webp" alt="Arrollador" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Arrollador</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/coldblooded.webp" alt="Espionaje" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Espionaje</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/tacticalmask.webp" alt="Máscara táctica" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Máscara táctica</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/deadsilence.webp" alt="Silencio mortal" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Silencio mortal</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/fastrecover.webp" alt="Entrenamiento de supervivencia" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Entrenamiento de supervivencia</div></div>
+<div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/perks/extratactical.webp" alt="Lanzador extra" loading="lazy" referrerpolicy="no-referrer" style="width:40px;height:40px;object-fit:contain"></div><div class="rule-tile-name">Lanzador extra</div></div>
+</div>
+</div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-check.svg" alt=""></div><div class="rule-tile-name">Recuperación rápida</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-shield.svg" alt=""></div><div class="rule-tile-name">Traje antibombas</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-runner.svg" alt=""></div><div class="rule-tile-name">Ágil</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-boot.svg" alt=""></div><div class="rule-tile-name">Peso ligero</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-muscle.svg" alt=""></div><div class="rule-tile-name">Pulmones de acero</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-muscle.svg" alt=""></div><div class="rule-tile-name">Valiente</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-runner.svg" alt=""></div><div class="rule-tile-name">Despiadado</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-shield.svg" alt=""></div><div class="rule-tile-name">Dureza</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-ghost.svg" alt=""></div><div class="rule-tile-name">Ghost</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-star.svg" alt=""></div><div class="rule-tile-name">Habilidad innata</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-satellite.svg" alt=""></div><div class="rule-tile-name">Amplificado</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-boom.svg" alt=""></div><div class="rule-tile-name">Arrollador</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-eye.svg" alt=""></div><div class="rule-tile-name">Espionaje</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-mask.svg" alt=""></div><div class="rule-tile-name">Máscara táctica</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-speak.svg" alt=""></div><div class="rule-tile-name">Silencio mortal</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-map.svg" alt=""></div><div class="rule-tile-name">Entrenamiento de supervivencia</div></div>
+                        <div class="rule-tile ok"><div class="rule-tile-icon"><img src="img/rules/tw-rocket.svg" alt=""></div><div class="rule-tile-name">Lanzador extra</div></div>
+                    </div>
+                </div>
+
+                <!-- SKINS BAN -->
+                <div class="rule-section">
+                    <h2>Skins de personajes ban</h2>
+                    <div class="rule-grid">
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Cosmic Silverback</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Zombie Wicht Warden</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Siren Night Fang</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Siren Wrath Hunter</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Golem Everglade</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Roze Murk</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Roze Rook</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Death Angel Alice Trench</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Death Angel Alice Shrouded</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Maiden</div></div>
+                        <div class="rule-tile ban"><div class="rule-tile-icon"><img src="img/rules/tw-person.svg" alt=""></div><div class="rule-tile-name">Florence Night Terror</div></div>
+                    </div>
+                </div>
+
+                <div class="warn-box">
+                    <h3>⚠️ Importante</h3>
+                    <ul>
+                        <li>NO emotes</li>
+                        <li>NO letal y táctico legendario</li>
+                        <li>Todo el equipamiento baneado en partida (si importa, su uso se da por perdido el modo que hayan jugado)</li>
+                    </ul>
+                </div>
+
+                <p class="section-subtitle" style="margin-top:2rem;font-size:0.85rem">
+                    Fuente: reglamento Championship 2026 actualizado · Nexus Community<br>Imágenes de mapas/rachas vía Call of Duty Wiki (Fandom) · uso informativo de comunidad · Iconos: Twemoji
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer class="nx-footer">
+        <div class="nx-footer-bottom"><p>© 2026 Nexus Community — Call of Duty Mobile</p></div>
+    </footer>
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>

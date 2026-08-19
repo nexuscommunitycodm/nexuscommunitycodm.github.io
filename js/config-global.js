@@ -48,10 +48,10 @@ const CONFIG = {
     SEMANAL_EMPIRE_URL:   'https://docs.google.com/spreadsheets/d/e/2PACX-1vSeTjwI1vz-7zuWFUs95mQDPCtl-fKZWtvwg0qySlwQ-8xjgt0QTSSI2m5FDziQVnMGZGqW0H3mNSBL/pub?gid=1647175282&single=true&output=csv',
 
     // Diarios / sanciones (opcional, por room)
-    DIARIOS_DYNASTY_URL:  'https://docs.google.com/spreadsheets/d/PLACEHOLDER/pub?gid=0&single=true&output=csv',
-    DIARIOS_LIMITED_URL:  'https://docs.google.com/spreadsheets/d/PLACEHOLDER/pub?gid=0&single=true&output=csv',
-    DIARIOS_VIXEN_URL:    'https://docs.google.com/spreadsheets/d/PLACEHOLDER/pub?gid=0&single=true&output=csv',
-    DIARIOS_EMPIRE_URL:   'https://docs.google.com/spreadsheets/d/PLACEHOLDER/pub?gid=0&single=true&output=csv',
+    DIARIOS_DYNASTY_URL:  'https://docs.google.com/spreadsheets/d/e/2PACX-1vQbMs-YyiS2PSXTryb7rS43TDMErTKGyIfnc9_hy8On5vOVYVH0BhBb5uzplcbNXDDoatTGqrZILUq8/pub?gid=326011087&single=true&output=csv',
+    DIARIOS_LIMITED_URL:  'https://docs.google.com/spreadsheets/d/e/2PACX-1vQdSeXeMNDxDC2az_HTpso5uReMuQh4nYJxFtNjuyIesGvImgiHARnqW7GgYdL7Yfmzvj5f2CWDrL7G/pub?gid=326011087&single=true&output=csv',
+    DIARIOS_VIXEN_URL:    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSLMRkjYbFqEgjwc1XgcsrWqYpwwiRjbvpOZNuh9jBQ49pFTVumMeAEaITNl0BR-vk0esOgPfNV8rmK/pub?gid=326011087&single=true&output=csv',
+    DIARIOS_EMPIRE_URL:   'https://docs.google.com/spreadsheets/d/e/2PACX-1vSeTjwI1vz-7zuWFUs95mQDPCtl-fKZWtvwg0qySlwQ-8xjgt0QTSSI2m5FDziQVnMGZGqW0H3mNSBL/pub?gid=326011087&single=true&output=csv',
 
     LOGO_FOLDER:    'logos',
     LOGO_EXTENSION: 'jpg',
@@ -80,9 +80,30 @@ const CONFIG = {
 
     // Streamers por sala (TikTok)
     STREAMERS: [
-        { nombre: 'Empire',  handle: '@andy_q93',       url: 'https://www.tiktok.com/@andy_q93',       sala: 'Empire Room',  color: '#6A20A6' },
-        { nombre: 'Dynasty', handle: '@danielochoa1995', url: 'https://www.tiktok.com/@danielochoa1995', sala: 'Dynasty Room', color: '#E61C8A' },
-        { nombre: 'Vixen',   handle: '@toxii',           url: 'https://www.tiktok.com/@toxii',           sala: 'Vixen Room',   color: '#A60201' },
+        {
+            nombre: 'TL.Inexperto',
+            handle: '@tl.inexperto',
+            url: 'https://www.tiktok.com/@tl.inexperto',
+            sala: 'Dynasty Room',
+            color: '#E61C8A',
+            img: 'img/streamers/tl-inexperto.jpeg',
+        },
+        {
+            nombre: 'La Tóxica',
+            handle: '@toxii',
+            url: 'https://www.tiktok.com/@toxii',
+            sala: 'Vixen Room',
+            color: '#A60201',
+            img: 'img/streamers/la-toxica.jpeg',
+        },
+        {
+            nombre: 'Empire',
+            handle: '@andy_q93',
+            url: 'https://www.tiktok.com/@andy_q93',
+            sala: 'Empire Room',
+            color: '#6A20A6',
+            img: 'logos/EMPIRE.jpeg',
+        },
     ],
 };
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamers — Nexus Community</title>
+    <meta property="og:title" content="Streamers — Nexus Community" />
+    <meta property="og:description" content="Streamers oficiales de Nexus Community CODM" />
+    <meta property="og:image" content="https://nexuscodm.com/img/brand/streamers.png" />
+    <meta property="og:image:secure_url" content="https://nexuscodm.com/img/brand/streamers.png" />
+    <link rel="icon" type="image/png" href="logo/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Rajdhani:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <img src="img/brand/streamers.png" alt="Streamers Nexus" class="streamers-hero-logo">
+                <h1 class="section-title">Streamers</h1>
+                <p class="section-subtitle">Contenido, salas y comunidad en TikTok</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+            <div class="container">
+                <div class="streamers-page-grid" id="streamersPageGrid">
+                    <!-- se llena con JS + datos fijos -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="nx-footer">
+        <div class="nx-footer-bottom"><p>© 2026 Nexus Community — Call of Duty Mobile</p></div>
+    </footer>
+    <script src="js/config-global.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const list = [
+            {
+                nombre: 'TL.Inexperto',
+                handle: '@tl.inexperto',
+                url: 'https://www.tiktok.com/@tl.inexperto',
+                img: 'img/streamers/tl-inexperto.jpeg',
+                desc: 'Dynasty Room',
+                color: '#E61C8A',
+            },
+            {
+                nombre: 'La Tóxica',
+                handle: '@toxii',
+                url: 'https://www.tiktok.com/@toxii',
+                img: 'img/streamers/la-toxica.jpeg',
+                desc: 'Vixen Room · Host',
+                color: '#A60201',
+            },
+            {
+                nombre: 'Empire',
+                handle: '@andy_q93',
+                url: 'https://www.tiktok.com/@andy_q93',
+                img: 'logos/EMPIRE.jpeg',
+                desc: 'Empire Room',
+                color: '#6A20A6',
+            },
+        ];
+        const el = document.getElementById('streamersPageGrid');
+        if (!el) return;
+        el.innerHTML = list.map(s => `
+            <a class="streamer-page-card" href="${s.url}" target="_blank" rel="noopener" style="--room-color:${s.color || '#fff'}">
+                <img src="${s.img}" alt="${s.nombre}" class="streamer-page-img"
+                     onerror="this.src='logo/logo.png'">
+                <div class="streamer-page-info">
+                    <div class="streamer-page-name">${s.nombre}</div>
+                    <div class="streamer-page-handle">${s.handle}</div>
+                    <div class="streamer-page-desc">${s.desc || ''}</div>
+                    <span class="streamer-cta">Ver en TikTok →</span>
+                </div>
+            </a>
+        `).join('');
+    });
+    </script>
+</body>
+</html>

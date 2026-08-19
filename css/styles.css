@@ -2236,3 +2236,100 @@ body.tiktok-page {
     font-size: 0.8rem;
     color: rgba(255,255,255,0.65);
 }
+
+.sala-rank-block {
+    margin-bottom: 2rem;
+}
+.sala-rank-heading {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+    color: var(--sala-accent, var(--text));
+    border-left: 3px solid var(--sala-accent, var(--text));
+    padding-left: 0.65rem;
+}
+
+.sala-rank-controls {
+    margin-bottom: 1.25rem;
+}
+.sala-rank-controls .filtro-btn.active {
+    background: var(--sala-accent, var(--text));
+    border-color: var(--sala-accent, var(--text));
+    color: #fff;
+}
+
+/* Descargar juego */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 720px;
+    margin: 0 auto;
+}
+.download-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 1.35rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    transition: border-color 0.15s, transform 0.15s;
+}
+.download-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+}
+.download-icon { font-size: 1.75rem; }
+.download-name { font-weight: 700; font-size: 1.05rem; }
+.download-meta { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Página streamers */
+.streamers-hero-logo {
+    width: min(280px, 70vw);
+    margin: 0 auto 1rem;
+    display: block;
+    border-radius: 12px;
+}
+.streamers-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+.streamer-page-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--room-color, var(--text));
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.15s, border-color 0.15s;
+}
+.streamer-page-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--room-color, var(--border-light));
+}
+.streamer-page-img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    background: #000;
+}
+.streamer-page-info {
+    padding: 1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.streamer-page-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+.streamer-page-handle { color: var(--text-muted); }
+.streamer-page-desc { font-size: 0.85rem; color: var(--text-dim); }
