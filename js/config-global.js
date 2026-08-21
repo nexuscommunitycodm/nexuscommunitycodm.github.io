@@ -78,7 +78,7 @@ const CONFIG = {
         BRONCE:         13,  // 3er lugar
     },
 
-    // Streamers por sala (TikTok)
+    // Streamers (personas / hosts)
     STREAMERS: [
         {
             nombre: 'TL.Inexperto',
@@ -86,7 +86,7 @@ const CONFIG = {
             url: 'https://www.tiktok.com/@tl.inexperto',
             sala: 'Dynasty Room',
             color: '#E61C8A',
-            img: 'img/streamers/tl-inexperto.jpeg',
+            img: 'streamers-assets/tl-inexperto.jpeg',
         },
         {
             nombre: 'La Tóxica',
@@ -94,7 +94,7 @@ const CONFIG = {
             url: 'https://www.tiktok.com/@toxii',
             sala: 'Vixen Room',
             color: '#A60201',
-            img: 'img/streamers/la-toxica.jpeg',
+            img: 'streamers-assets/la-toxica.jpeg',
         },
         {
             nombre: 'Empire',
@@ -105,6 +105,15 @@ const CONFIG = {
             img: 'logos/EMPIRE.jpeg',
         },
     ],
+
+    // TikTok oficial de cada sala (aparte de streamers)
+    SALA_TIKTOK: {
+        dynasty: { nombre: 'Dynasty Room', handle: '@nexuscommunity_dy', url: 'https://www.tiktok.com/@nexuscommunity_dy', color: '#E61C8A' },
+        limited: { nombre: 'Limited Room', handle: '@nexuscommunity_lr', url: 'https://www.tiktok.com/@nexuscommunity_lr', color: '#183A15' },
+        vixen:   { nombre: 'Vixen Room',   handle: '@nexuscommunity_vr', url: 'https://www.tiktok.com/@nexuscommunity_vr', color: '#A60201' },
+        empire:  { nombre: 'Empire Room',  handle: '@nexuscommunity_er', url: 'https://www.tiktok.com/@nexuscommunity_er', color: '#6A20A6' },
+    },
+
 };
 
 /* ── Logo: URL de la hoja o carpeta local por ID ── */
